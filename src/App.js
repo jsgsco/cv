@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import DataNavProvider from './context/DataNavProvider'
+import DataUserProvider from './context/DataUserProvider'
+import {
+  BrowserRouter as Router,
+} from 'react-router-dom'
+
+import { Container } from 'react-bootstrap'
+
+import PublicRoutes from './routes/public.routes'
+import PrivateRoutes from './routes/private.routes'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DataUserProvider>
+      <DataNavProvider>
+        <Router>
+          <Container>
+            
+          </Container>
+        </Router>
+      </DataNavProvider>
+    </DataUserProvider>
   );
 }
 

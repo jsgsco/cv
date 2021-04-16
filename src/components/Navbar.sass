@@ -1,0 +1,61 @@
+@import '../sass/variables'
+
+.home 
+    width: 100%
+    display: flex
+    justify-content: space-between
+    padding: 10px
+    margin-top: 2rem
+    &_menu 
+        display: none
+        cursor: pointer
+    &_image:hover
+        transition: 1s all
+        transform: rotate(360deg) 
+    &_button 
+        color: $white-color
+        font-size: 15px
+        padding: 3px 6px
+    &_button:hover
+        text-decoration: none
+        color: $white-color
+        border-bottom: 2px solid $white-color
+    
+
+@media screen and ( max-width: 850px) 
+    .home
+        &_nav
+            display: none
+        &_menu
+            display: inline-block
+        &_menu:hover
+            transform: rotate(-90deg) 
+            transition: 1s all
+
+.home_menu-show
+    width: 100%
+    display: flex
+    flex-direction: column
+    padding: 10px
+    margin-top: 2rem
+    &_close
+        cursor: pointer
+    &_close:hover
+        transform: rotate(-90deg) 
+        transition: 1s all
+    &_nav
+        width: 100%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center 
+        align-self: center
+        &_button
+            text-align: center
+            width: 100%
+            padding: 10px
+            color: $white-color
+        &_button:hover
+            color: $white-color
+            text-decoration: none
+    
