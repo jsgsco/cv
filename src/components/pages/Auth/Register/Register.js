@@ -98,4 +98,4 @@ function validationSchema() {
     }
 }
 
-export default withRouter(Register);
+export default Register;

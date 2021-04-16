@@ -74,4 +74,4 @@ function validationSchema() {
     }
 }
 
-export default withRouter(Login);
+export default Login;

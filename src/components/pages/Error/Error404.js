@@ -1,0 +1,12 @@
+import React from 'react'
+import './Error404.sass'
+
+const Error404 = () => {
+    return (
+        <div>
+            Error 404
+        </div>
+    )
+}
+
+export default Error404
