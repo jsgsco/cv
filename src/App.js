@@ -5,41 +5,33 @@ import {
 } from 'react-router-dom'
 
 import { Container } from 'react-bootstrap'
-
 import routes from './routes/routes'
+
 
 function App() {
   return (
     <DataUserProvider>
       <DataNavProvider>
-        <Router>
-          <Switch>
-            <Container>
+        <Container>
+          <Router>
+            <Switch>
               {
                 routes.map((route, index) => (
-                  <WithRoute 
+                  <Route 
                     key={index}
-                    {...route}
+                    path={route.path}
+                    component={route.component}
+                    exact={route.exact}
                   />
                 ))
               }
-            </Container>
-          </Switch>
-        </Router>
+            </Switch>
+          </Router>
+        </Container>
       </DataNavProvider>
     </DataUserProvider>
   );
 }
 
-function WithRoute(route) {
-  console.log(route)
-  return (
-    <Route 
-      path={route.path}
-      component={route.component}
-      exact={route.exact}
-    />
-  )
-}
 
 export default App;

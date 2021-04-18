@@ -34,10 +34,11 @@ const Navbar = () => {
             <nav className="home_nav">   
                 {
                     map(dataNav, (nav) => (
-                        <Link to={nav.url} 
-                            className={nav.styles} 
+                        <Link
                             key={nav.id}
-                        >{nav.titulo}</Link>
+                            className={nav.styles}
+                            to={nav.url}
+                        >{nav.name}</Link>
                         )
                     )
                 }
@@ -74,10 +75,11 @@ function NavbarResponsive({setOpenShowMenu, dataNav}) {
             <nav className="home_menu-show_nav">
                 {
                     map(dataNav, (nav) => (
-                        <Link to={nav.url} 
-                            className="home_menu-show_nav_button"
+                        <Link
                             key={nav.id}
-                        >{nav.titulo}</Link>
+                            className={nav.styles}
+                            to={nav.url}
+                        >{nav.name}</Link>
                         )
                     )
                 }

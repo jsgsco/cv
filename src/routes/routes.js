@@ -1,35 +1,38 @@
-// Imports from Admin - Login and Register
-import Admin from '../components/pages/Admin/Admin'
+// Import from Login - Register and Admin Page
 import Login from '../components/pages/Auth/Login/Login'
 import Register from '../components/pages/Auth/Register/Register'
+import Admin from '../components/pages/Admin/Admin'
 
-// Import from Home 
+// Import from Home Page
 import Home from '../components/pages/Home/Home'
 
-// Error404
+// Import from Error Page
 import Error from '../components/pages/Error/Error404'
-
 
 const routes = [
     {
-        path: '/',
+        path: "/",
         component: Home,
         exact: true
     },
     {
-        path: '/admin',
-        component: Admin,
-        exact: true
-    },
-    {
-        path: '/admin-login',
+        path: "/login-admin",
         component: Login,
         exact: false
     },
     {
-        path: '/admin-register',
+        path: "/register-admin",
         component: Register,
         exact: false
+    },
+    {
+        path: "/admin",
+        component: Admin,
+        exact: true
+    },
+    {
+        path: "/**",
+        component: Error
     }
 ]
 
