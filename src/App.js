@@ -1,5 +1,5 @@
 import DataNavProvider from './context/DataNavProvider'
-import DataUserProvider from './context/DataUserProvider'
+import DataHomeProvider from './context/DataHomeProvider'
 import {
   BrowserRouter as Router, Switch, Route
 } from 'react-router-dom'
@@ -10,7 +10,7 @@ import routes from './routes/routes'
 
 function App() {
   return (
-    <DataUserProvider>
+    <DataHomeProvider>
       <DataNavProvider>
         <Container>
           <Router>
@@ -29,7 +29,7 @@ function App() {
           </Router>
         </Container>
       </DataNavProvider>
-    </DataUserProvider>
+    </DataHomeProvider>
   );
 }
 

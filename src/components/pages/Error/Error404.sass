@@ -1,0 +1,26 @@
+@import '../../../sass/variables'
+    
+.error 
+    width: 100%
+    height: 100vh
+    display: flex
+    justify-content: space-evenly
+    justify-content: center
+    align-items: center
+    &_404
+        width: 50%
+        &-image
+            width: 100%
+    &_text
+        width: 50%
+        &_text
+            font-size: 45px
+
+@media screen and ( max-width: 770px )
+    .error
+        &_404
+            width: 0px
+            &-image
+                display: none
+        &_text
+            width: 100%

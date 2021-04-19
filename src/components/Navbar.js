@@ -1,19 +1,18 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-
 import { Image, Button } from 'react-bootstrap'
 import { List, X } from 'react-bootstrap-icons'
-
 import { map } from 'lodash'
-
 import { DataNavContext } from '../context/DataNavProvider'
 
 import './Navbar.sass'
 
 const Navbar = () => {
     
+    // Bring all the data from our provider
     const { dataNav, openShowMenu, setOpenShowMenu } = useContext(DataNavContext)
 
+    // This function allows you to change the state of the navigation when it is in small devices
     const changeShowMenu = () => {
         setOpenShowMenu(true)
     }
@@ -60,6 +59,7 @@ export default Navbar;
 
 function NavbarResponsive({setOpenShowMenu, dataNav}) {
 
+    // This function allows you to change the state of the navigation when it is in small devices
     const changeShowMenu = () => {
         setOpenShowMenu(false)
     }

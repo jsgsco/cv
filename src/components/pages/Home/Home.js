@@ -1,19 +1,26 @@
 import { Fragment, useContext } from 'react'
 import { DataNavContext } from '../../../context/DataNavProvider'
+import { DataHomeContext } from '../../../context/DataHomeProvider'
 import { Spinner } from 'react-bootstrap'
 import Navbar from '../../Navbar';
+import Head from '../../Head';
+
+
 import './Home.sass'
 
 const Home = () => {
 
+    // The call is made from the Provider to obtain the data
     const { dataNav } = useContext(DataNavContext)
+    const { button } = useContext(DataHomeContext)
 
-    if(!dataNav) return <div className="spinner"><Spinner animation="border"/></div>
+    // If there is no data in the navigation, this component is not rendered
+    if(!dataNav && button) return <div className="spinner"><Spinner animation="border"/></div>
 
     return (
         <Fragment>
             <Navbar />
-            <h2>Home</h2>
+            <Head />
         </Fragment>
       );
 }

@@ -1,6 +1,5 @@
 import { createContext, useEffect, useState } from 'react'
-import { firebase } from '../config/firebase'
-
+import { BASE_PATH } from '../config/const'
 
 export const DataNavContext = createContext()
 
@@ -8,15 +7,15 @@ const DataNavProvider = (props) => {
 
     // States
     const [openShowMenu, setOpenShowMenu] = useState(false)
-    const [dataNav, setDataNav] = useState([])
+    const [dataNav, setDataNav] = useState(undefined)
 
     // Call the API to get the navigation list
-    const getNavFirebase = async () => {
-        const db = firebase.firestore()
+    const getNavAPI = async () => {
         try {
-            const data = await db.collection('navegacion').get()
-            const arrayData = data.docs.map(doc => ({id: doc.id, ...doc.data()}))
-            return arrayData
+            const url = `${BASE_PATH}/navegacions`
+            const response = await fetch(url)
+            const result = await response.json()
+            return result
         } catch (error) {
             return null
         }
@@ -25,10 +24,11 @@ const DataNavProvider = (props) => {
     // UseEffect is used to prevent an infinite loop from being created
     useEffect(() => {
         (async () => {
-            const response = getNavFirebase()
+            const response = await getNavAPI()
             setDataNav(response)
         })()
     }, [])
+    
 
     return (
         <DataNavContext.Provider value={{
