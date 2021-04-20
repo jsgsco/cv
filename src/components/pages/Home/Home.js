@@ -7,6 +7,7 @@ import Head from '../../Head';
 
 
 import './Home.sass'
+import AboutMe from '../../AboutMe';
 
 const Home = () => {
 
@@ -21,6 +22,7 @@ const Home = () => {
         <Fragment>
             <Navbar />
             <Head />
+            <AboutMe />
         </Fragment>
       );
 }

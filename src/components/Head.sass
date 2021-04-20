@@ -9,7 +9,7 @@
     &_head
         font-size: 40px
     &_image
-        width: 4%
+        width: 50px
     &_title
         font-size: 25px
         font-weight: 600
@@ -29,6 +29,16 @@
             background-color: $white-color
             color: $black-color
             text-decoration: none
+
+@media screen and (max-width: 425px)
+    .head
+        &_social
+            display: flex
+            flex-direction: column
+            &_button
+                text-align: center
+                width: 100%
+                margin: 5px 0
 
 @keyframes animation
     0%

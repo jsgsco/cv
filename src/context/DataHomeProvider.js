@@ -21,6 +21,7 @@ const DataHomeProvider = (props) => {
         }
     }
 
+    // Search the API for social buttons
     const getButtonsAPI = async () => {
         try {
           const url = `${BASE_PATH}/socials`  

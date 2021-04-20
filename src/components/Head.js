@@ -2,7 +2,6 @@ import { useContext } from 'react'
 import { Image } from 'react-bootstrap'
 import { DataHomeContext } from '../context/DataHomeProvider'
 import { map } from 'lodash'
-
 import Button from './Button'
 
 import './Head.sass'

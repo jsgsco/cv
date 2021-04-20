@@ -1,0 +1,50 @@
+.about-me
+    width: 100%
+    margin: auto
+    margin-top: 100px
+    display: flex
+    justify-content: space-between
+    animation-name: about
+    animation-duration: 3s
+    &_text
+        width: 70%
+        &-title
+            font-weight: 600
+            margin-bottom: 15px
+    &_image
+        display: flex
+        justify-content: center
+        &-image
+            width: 75%
+            border-radius: 5px
+            box-shadow: 4px 6px #202020
+            transition: 1s all
+        &-image:hover
+            width: 76%
+
+@media screen and (max-width: 735px)
+    .about-me
+        flex-direction: column
+        margin-top: 50px
+        &_text
+            width: 100%
+            &-title
+                font-size: 23px
+            &-text
+                font-size: 14px
+        &_image
+            display: inline-block
+            &-image
+                width: 100%
+            &-image:hover
+                width: 100%
+
+@keyframes about
+    0%
+        opacity: 0.2
+        transform: translateY(4%)
+    50%
+        transform: translateY(1%)
+    100%
+        transform: translateY(0%)
+    
