@@ -15,11 +15,6 @@ const routes = [
         exact: true
     },
     {
-        path: '/contact',
-        component: Contact,
-        exact: true
-    },
-    {
         path: "/**",
         component: Error
     }
