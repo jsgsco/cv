@@ -1,5 +1,4 @@
 import { useContext } from 'react'
-import { Link } from 'react-router-dom'
 import { Image, Button } from 'react-bootstrap'
 import { List, X } from 'react-bootstrap-icons'
 import { map } from 'lodash'
@@ -33,17 +32,18 @@ const Navbar = () => {
             <nav className="home_nav">   
                 {
                     map(dataNav, (nav) => (
-                        <Link
+                        <a
                             key={nav.id}
                             className={nav.styles}
-                            to={nav.url}
-                        >{nav.name}</Link>
+                            href={nav.url}
+                        >{nav.name}</a>
                         )
                     )
                 }
                 <Button 
                     variant="light" 
                     className="ml-5"
+                    disabled
                 >Download CV</Button>
             </nav>
         </div>
@@ -75,17 +75,18 @@ function NavbarResponsive({setOpenShowMenu, dataNav}) {
             <nav className="home_menu-show_nav">
                 {
                     map(dataNav, (nav) => (
-                        <Link
+                        <a
                             key={nav.id}
                             className={nav.styles}
-                            to={nav.url}
-                        >{nav.name}</Link>
+                            href={nav.url}
+                        >{nav.name}</a>
                         )
                     )
                 }
                 <Button 
                     variant="light" 
                     className="my-2"
+                    disabled
                 >Download CV</Button>
             </nav>
         </div>

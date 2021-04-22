@@ -1,0 +1,96 @@
+.footer
+    width: 100%
+    height: 17vh
+    display: flex
+    justify-content: space-between
+    animation-name: about
+    animation-duration: 2s
+    &_social
+        width: 20%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        a:nth-last-child(4)
+            margin: none
+        &-button
+            font-size: 15px
+            color: white
+            margin: 5px 0
+            &:hover
+                text-decoration: none
+                color: aqua
+    &_info
+        width: 60%
+        padding: 50px
+        display: flex
+        justify-content: center
+        text-align: center
+        align-items: center
+    &_newsletter
+        width: 20%
+        display: flex
+        justify-content: center
+        flex-direction: column
+        &-form
+            justify-content: center
+            display: flex
+            flex-direction: column
+            &-input
+                border-radius: 5px
+                border: none
+                background-color: #1e1f22
+                color: white
+                padding: 8px
+                font-size: 14px
+                margin-bottom: 4px
+                &:focus
+                    outline: 0
+                    border-bottom: 1px solid white
+            &-submit
+                border: none
+                border-radius: 2px
+                padding: 3px
+                font-size: 15px
+                transition: 1s all
+                &:hover
+                    background-color: #E4EBEB
+            &-text
+                margin-top: 5px
+                font-size: 14px
+                text-align: center
+            &-error
+                font-size: 14px
+                padding: 5px
+                border-radius: 5px
+                background-color: #BF0B2C
+                text-align: Center
+            &-success
+                font-size: 14px
+                padding: 5px
+                border-radius: 5px
+                background-color: #17A67D
+                text-align: center
+
+@keyframes about
+    0%
+        opacity: 0.2
+        transform: translateY(10%)
+    100%
+        transform: translateY(0%)
+        
+
+@media screen and (max-width: 998px)
+    .footer
+        justify-content: normal
+        flex-direction: column
+        &_social
+            display: none
+        &_info
+            padding: 5px
+            width: 100%
+            display: inline-block
+        &_newsletter
+            width: 100%
+            &-form-text
+                margin-top: 5px
