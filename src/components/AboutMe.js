@@ -25,6 +25,7 @@ const AboutMe = () => {
                             <Image 
                                 src="https://jsgsco-backend.s3-us-west-1.amazonaws.com/profile.jpg"
                                 className="about-me_image-image"
+                                alt="Jhon Steven Saavedra"
                             />
                         </div>
                     </Fragment>

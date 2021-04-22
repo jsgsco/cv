@@ -13,7 +13,7 @@ const Head = () => {
 
     return (
         <div className="head">
-            <h2 className="head_head">Hello <Image src="https://jsgsco-backend.s3-us-west-1.amazonaws.com/descarga.png" className="head_image"/> </h2>
+            <h2 className="head_head">Hello <Image src="https://jsgsco-backend.s3-us-west-1.amazonaws.com/descarga.png" className="head_image" alt="Hello"/> </h2>
             <h1 className="head_title">I'm {title}</h1>
             <h3 className="head_subtitle">This is my humble abode</h3>
             <div className="head_social">
