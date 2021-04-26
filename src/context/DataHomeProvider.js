@@ -17,7 +17,7 @@ const DataHomeProvider = (props) => {
             const url = `${BASE_PATH}/titles`
             const response = await fetch(url)
             const result = await response.json()
-            return result
+            setTitle(result[0].title)
         } catch (error) {
             return null
         }
@@ -29,7 +29,7 @@ const DataHomeProvider = (props) => {
           const url = `${BASE_PATH}/socials`  
           const response = await fetch(url)
           const result = await response.json()
-          return result
+          setButton(result)
         } catch (error) {
             return null
         }
@@ -41,7 +41,7 @@ const DataHomeProvider = (props) => {
             const url = `${BASE_PATH}/about-mes`
             const response = await fetch(url)
             const result = await response.json()
-            return result
+            setAboutMe(result)
         } catch (error) {
             return null
         }
@@ -53,7 +53,7 @@ const DataHomeProvider = (props) => {
             const url = `${BASE_PATH}/features`
             const response = await fetch(url)
             const result = await response.json()
-            return result
+            setFeatures(result)
         } catch (error) {
             return null
         }
@@ -80,31 +80,19 @@ const DataHomeProvider = (props) => {
 
     // To avoid an infinite loop use the useEffect
     useEffect(() => {
-        (async () => {
-            const resOne = await getTitleAPI()
-            setTitle(resOne[0].title)
-        })()
+        getTitleAPI()
     }, [])
 
     useEffect(() => {
-        (async () => {
-            const response = await getButtonsAPI()
-            setButton(response)
-        })()
+        getButtonsAPI()
     }, [])
 
     useEffect(() => {
-        (async () => {
-            const response = await getAboutMeAPI()
-            setAboutMe(response)
-        })()
+        getAboutMeAPI()
     }, [])
 
     useEffect(() => {
-        (async () => {
-            const response = await getFeatureAPI()
-            setFeatures(response)
-        })()
+        getFeatureAPI()
     }, [])
 
     return (

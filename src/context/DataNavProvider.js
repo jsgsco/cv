@@ -15,7 +15,7 @@ const DataNavProvider = (props) => {
             const url = `${BASE_PATH}/navegacions`
             const response = await fetch(url)
             const result = await response.json()
-            return result
+            setDataNav(result)
         } catch (error) {
             return null
         }
@@ -23,10 +23,7 @@ const DataNavProvider = (props) => {
 
     // UseEffect is used to prevent an infinite loop from being created
     useEffect(() => {
-        (async () => {
-            const response = await getNavAPI()
-            setDataNav(response)
-        })()
+        getNavAPI()
     }, [])
     
 
