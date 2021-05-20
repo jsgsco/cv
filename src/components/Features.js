@@ -15,11 +15,12 @@ const Features = () => {
           {map(features, (feature) => (
             <li key={feature.id}>
               <div className="timeline-content">
-                <h3 className="date">{feature.date}</h3>
+                <h3 className="date">{feature.technologyes}</h3>
                 <h1>{feature.title}</h1>
                 <p>
                   {feature.summary}
                 </p>
+                <a href={feature.url} className="url-btn" target="_blank" rel="noreferrer">View Code</a>
               </div>
             </li>
           ))}

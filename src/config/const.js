@@ -1,1 +1,1 @@
-export const BASE_PATH = 'https://jsgsco-backend.herokuapp.com'
+export const BASE_PATH = 'http://localhost:1337'
